@@ -1,4 +1,4 @@
-package com.tuyano.springboot;
+package com.tuyano.springboot.data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,16 +10,17 @@ import javax.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name="User")
+@Table(name="user")
 @Data
 public class UserData {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column
 	private long id;
 	
 	private String userId;
+	
 	private String password;
-	private String userName;
+	
+	private String user_name;
 }

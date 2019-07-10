@@ -1,4 +1,4 @@
-package com.tuyano.springboot;
+package com.tuyano.springboot.data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,26 +18,13 @@ public class MyData {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
 
 	private long id;
 	
-	@Column(length = 50, nullable = true)
-	private String name;
-
-	@Column(length = 200, nullable = true)
-	private String mail;
-
-	@Column(nullable = true)
-	private Integer age;
-	
-	@Column(length = 200, nullable = true)
 	private String memo;
 	
-	@Column(length = 500, nullable = true)
 	private Date date =new Date();
 	
-	@Column(length = 200, nullable = true)
 	private String title;
 	
 //	public long getId() {

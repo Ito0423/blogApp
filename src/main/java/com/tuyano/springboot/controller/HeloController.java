@@ -1,4 +1,4 @@
-package com.tuyano.springboot;
+package com.tuyano.springboot.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import javax.annotation.PostConstruct;
 
+import com.tuyano.springboot.data.MyData;
 import com.tuyano.springboot.repositories.MyDataRepository;
  
 
@@ -20,33 +21,7 @@ public class HeloController {
 	
 	@Autowired
 	MyDataRepository repository;
-	
-	@PostConstruct
-	 public void init(){
-		MyData d1 = new MyData();
-		d1.setTitle("毎年羽毛布団");
-		d1.setAge(123);
-		d1.setMail("syoda@tuyano.com");
-		d1.setMemo("いい朝を迎えられております、\r\n" + 
-				"\r\n" + 
-				"\r\n" + 
-				"U.S.A.が発売されてから約一年、\r\n" + 
-				"\r\n" + 
-				"\r\n" + 
-				"色んな事がものすごいスピードで駆け巡りました。\r\n" + 
-				"\r\n" + 
-				"\r\n" + 
-				"それ以前にも色んな事がありました、\r\n" + 
-				"\r\n" + 
-				"\r\n" + 
-				"無駄な事は一つもなかったよ。\r\n" + 
-				"\r\n" + 
-				"\r\n" + 
-				"今まで一緒にいてくれた方とこれから出会うみんなに最大級の感謝を！！\r\n" + 
-				"");
-		repository.saveAndFlush(d1);
-	}
-	
+
 	@RequestMapping(value = "/create", method = RequestMethod.GET)
 	public ModelAndView index(
 			@ModelAttribute("formModel") MyData mydata, 
