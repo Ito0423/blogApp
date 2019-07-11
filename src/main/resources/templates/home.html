@@ -20,63 +20,55 @@
 <header class="sticky-top">
 <div class="row">
 <div class="col-md-6"></div>
-<div class="col-md-3"><a th:href="@{/create}" class="float-right" >ログイン</a></div>
+<div class="col-md-3"><a th:href="@{/create}" class="float-right" ><font color="#4e454a">ログイン</font></a></div>
 <div class="col-md-2"></div>
 </div>
 </header>
 <br>
-
 <div id="b">
 <div class="row">
 <div class="col-md-2"></div>
-<!--  <div class="col-md-8"><a href="http://localhost:8080/home"><img id="Cover" src="view/img/website3.png" width="100%"></a></div>-->
+<div class="col-md-8"><a href="http://localhost:8080/home"><img src="view/img/blog4.jpg" width="43%"></a></div>
 <div class="col-md-2"></div>
 </div>
 </div>
+<br>
 <div id="c" >
 <table class="table table-bordered">
-<tr bgcolor="#ffffff">
+<tr bgcolor="#add8e6">
 <td width=15%></td>
-<td width="15%"><a href="http://localhost:8080/home">TOP</a></td>
-<td width="15%"><a href="http://localhost:8080/create">編集</a></td>
-<td width="15%"><a>記事一覧</a></td>
+<td width="15%"><a href="http://localhost:8080/home"><font color="#4e454a">TOP</font></a></td>
+<td width="15%"><a href="http://localhost:8080/create"><font color="#4e454a">編集</font></a></td>
+<td width="15%"><a><font color="#4e454a">記事一覧</font></a></td>
 <td></td></tr>
 </table>
-<div id="site2">
-<br>
-<br>
-
+</div>
+<div id="site2" >
 <div class="row">
-
 <div id="e" class="col-md-8">
-<pre th:each="obj:${datalist}" >
+<pre th:each="obj:${datalist}">
 <h1 align="left" style="font-size:30px" th:text="${obj.title}"></h1>
 <hr>
 <table>
-<tr><td><p th:text="${obj.memo}"></p></td></tr>
-<!--   <tr><td><h2 style="font-size:10px" align="right" th:text="${obj.date}" ></h2></td></tr> -->
+<tr><td><p th:text="${obj.memo}"><font color="#4e454a">text</font></p></td></tr>
+<!--<tr><td><h2 style="font-size:10px" align="right" th:text="${obj.date}" ></h2></td></tr>-->
 </table>
 </pre>
 </div>
-	
 <div id="f" class="col-md-4">
-	<table th:each="obj:${datalist}">
-	<tr>
-	<td><font color="#000000">最新記事</font></td></tr>
-	<tr><td><a th:href="@{'/view/'+${obj.id}}"  th:text="${obj.title}">????</a></td><tr>
-	</table>
-	</div>
-	</div>
-	<br>
-	<br>
-	<br>
-	</div>
+<div id="f_1"><font color="">過去記事</font></div>
+<pre th:each="obj:${datalist}">
+<table id="f_2">
+<tr><td><a th:href="@{'/view/'+${obj.id}}"  th:text="${obj.title}">????</a></td><tr>
+</table>
+</pre>
+</div>
+</div>
+</div>
 	
 <div id="g">
 <hr>
-<br>
-<br>
-<br>
+
 <div class="row">
 <div class="col-md-6"></div>
 <div class="col-md-3"><table class="float-right" border="0" cellspacing="0" cellpadding="0"><tr><td valign="bottom"><a href="http://www.rays-counter.com/"><img src="http://www.rays-counter.com/d438_f6_022/5cf6184c7dccf/" alt="アクセスカウンター" border="0"></a></td></tr><tr><td align="center" style="font-size:xx-small"><img src="http://www.rays-counter.com/images/counter_01.gif" border="0"><img src="http://www.rays-counter.com/images/counter_02.gif" border="0"><img src="http://www.rays-counter.com/images/counter_03.gif" border="0"><img src="http://www.rays-counter.com/images/counter_04.gif" border="0"><img src="http://www.rays-counter.com/images/counter_05.gif" border="0"></td></tr></table></div>
@@ -85,6 +77,5 @@
 </div>
 </div>
 </div>
-
 </body>
 </html>

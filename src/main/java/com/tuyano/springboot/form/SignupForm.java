@@ -1,4 +1,4 @@
-package com.tuyano.springboot;
+package com.tuyano.springboot.form;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;

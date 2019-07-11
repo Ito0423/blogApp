@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.tuyano.springboot.SignupForm;
 import com.tuyano.springboot.data.UserData;
+import com.tuyano.springboot.form.SignupForm;
 import com.tuyano.springboot.repositories.UserDataRepository;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
