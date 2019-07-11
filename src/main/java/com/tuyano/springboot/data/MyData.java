@@ -23,7 +23,7 @@ public class MyData {
 	
 	private String memo;
 	
-	private Date date =new Date();
+//	private Date date =new Date();
 	
 	private String title;
 	

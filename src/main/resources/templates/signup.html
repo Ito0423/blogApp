@@ -21,10 +21,10 @@
                 <tr>
                     <th class="active col-sm-3">ユーザID</th>
                     <td>
-                        <div class="form-group" th:classappend="${#fields.hasErrors('userId')}?'has-error'">
-                            <input type="text" class="form-control" th:field="*{userId}"/>
-                            <span class="text-danger" th:if="${#fields.hasErrors('userId')}"
-                            th:errors="*{userId}">userId error</span>
+                        <div class="form-group" th:classappend="${#fields.hasErrors('userid')}?'has-error'">
+                            <input type="text" class="form-control" th:field="*{userid}"/>
+                            <span class="text-danger" th:if="${#fields.hasErrors('userid')}"
+                            th:errors="*{userid}">userId error</span>
                         </div>
                     </td>
                 </tr>
@@ -44,11 +44,11 @@
                 <tr>
                     <th class="active">ユーザー名</th>
                     <td>
-                        <div class="form-group" th:classappend="${#fields.hasErrors('userName')}?'has-error'">
+                        <div class="form-group" th:classappend="${#fields.hasErrors('username')}?'has-error'">
                             <input type="text" class="form-control" 
-                            th:field="*{userName}"/>
-                             <span class="text-danger" th:if="${#fields.hasErrors('userName')}"
-                            th:errors="*{userName}">userId error</span>
+                            th:field="*{username}"/>
+                             <span class="text-danger" th:if="${#fields.hasErrors('username')}"
+                            th:errors="*{username}">userId error</span>
                         </div>
                     </td>
                 </tr>

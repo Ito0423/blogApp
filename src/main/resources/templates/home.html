@@ -29,21 +29,20 @@
 <div id="b">
 <div class="row">
 <div class="col-md-2"></div>
-<div class="col-md-8"><a href="http://localhost:8080/home"><img id="Cover" src="view/img/website3.png" width="100%"></a></div>
+<!--  <div class="col-md-8"><a href="http://localhost:8080/home"><img id="Cover" src="view/img/website3.png" width="100%"></a></div>-->
 <div class="col-md-2"></div>
 </div>
 </div>
-<br>
-<div id="site2">
-
 <div id="c" >
 <table class="table table-bordered">
-<tr bgcolor="#ffffff"><td width="15%"><a href="http://localhost:8080/home">TOP</a></td>
+<tr bgcolor="#ffffff">
+<td width=15%></td>
+<td width="15%"><a href="http://localhost:8080/home">TOP</a></td>
 <td width="15%"><a href="http://localhost:8080/create">編集</a></td>
 <td width="15%"><a>記事一覧</a></td>
 <td></td></tr>
 </table>
-</div>
+<div id="site2">
 <br>
 <br>
 
@@ -55,18 +54,16 @@
 <hr>
 <table>
 <tr><td><p th:text="${obj.memo}"></p></td></tr>
-<tr><td><h2 style="font-size:10px" align="right" th:text="${obj.date}" ></h2></td></tr>
+<!--   <tr><td><h2 style="font-size:10px" align="right" th:text="${obj.date}" ></h2></td></tr> -->
 </table>
 </pre>
 </div>
 	
 <div id="f" class="col-md-4">
-	<p2>最新記事</p2>
-	<hr>
-	<table align="left">
-	<tr th:each="obj:${datalist}">
-	<td><a th:href="@{'/view/'+${obj.id}}"  th:text="${obj.title}">????</a></td>
-	</tr>
+	<table th:each="obj:${datalist}">
+	<tr>
+	<td><font color="#000000">最新記事</font></td></tr>
+	<tr><td><a th:href="@{'/view/'+${obj.id}}"  th:text="${obj.title}">????</a></td><tr>
 	</table>
 	</div>
 	</div>

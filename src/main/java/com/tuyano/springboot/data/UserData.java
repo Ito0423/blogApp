@@ -18,9 +18,9 @@ public class UserData {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
-	private String userId;
+	private String userid;
 	
 	private String password;
 	
-	private String user_name;
+	private String username;
 }
