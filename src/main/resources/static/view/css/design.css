@@ -3,60 +3,49 @@ body{background-color:#ffffff !important;}
 hr{margin:0; margin-top: 0  !important;
     margin-bottom: 0  !important;}
 header{background-color:#e9edefa1;}
-table{width:100%}
-td{word-break : break-all;}
-pre {
+/*pre {
+  margin:0px;
   padding: 0em;
-  width: auto;
-  _width: 90%;
-  height: auto;
+  width: 30%;
   overflow: auto;
   _overflow: scroll;
   margin-bottom:0rem !important; 
- 
-}
+}*/
 #site{max-width:100; background-color;}
 #site2{max-width:72%;
-  margin: 0 auto; height:auto; }
+  margin: 0 auto; height:100%; }
 #b{width:100% ;  background-color   : #ffffff;/*
   background-image   : radial-gradient(rgba(77, 255, 255, 0.70) 2%, transparent 9%),
                        radial-gradient(rgba(77, 255, 255, 0.70) 2%, transparent 9%);
   background-position: 0 0, 19px 19px;
   background-size    : 38px 38px;
   background-image : url(/view/img/blog4.jpg*/);
-  display:inline-block}
-#c{max-width:72%;
-  margin: 0 auto; height:auto; }
-#e{max-height:100%;}
+  }
+#e{border-style:ridge; background-color:#ffffff;
+   border-color:#e9ecef70; border-width:10px; padding:30px;height:20%}
 #g{background-color:#ffffff;}
-#f{font-size:25px; height:100%;}
+#f{font-size:25px;}
 #f_1{/*background-color:#add8e6;*/ padding:10px; width:100%; margin:0px;   padding-bottom: 0px;}
 #f_2{margin-bottom:0rem !important; font-size:20px; border-style: hidden;border-bottom: 1px  #ccc;}
-#f_3{padding:10px; margin-bott : 30px !important;}
+#f_3{padding:10px; margin-bottom: 30px !important;}
 #f_4{padding:10px; margin-bottom: 30px !important;}
-#f_5{margin-bottom: 30px !important;word-wrap: break-word;}
-#h{border-style:ridge; background-color:#ffffff;
-   border-color:#e9ecef70; border-width:10px;padding:30px;
-   margin-bottom:30px;word-wrap: break-word;}
+#f_5{margin-bottom: 30px !important;}
 #form1{padding-left: 12px;}
 #input1{width:60%; font-size:15px; }
 #input2{width:30%; font-size:15px;}
 #img1{padding-left: 90px;}
-#img2{padding-left:30px;}
 h1{color:#4e454a !important;font-size:20px !important;border-left:solid 10px #add8e6;
- padding-left: 12px; border-bottom: 1px solid #add8e6;}
-h2{font-size:50px !important; padding-left:}
+ padding-left: 12px; border-bottom: 1px solid #add8e6; margin-bottom: 20px !important;}
 p{font-size:px; color:#4e454a !important;}
 #btn1{
-  display:inline-block;
-  padding:0.5em 1em;
+	display: inline-block;
+  padding: 0.5em 1em;
   text-decoration: none;
   background: #668ad8;/*ボタン色*/
   color: #FFF;
   border-bottom: solid 4px #627295;
   border-radius: 3px;
   width:100%;
-
 }
 #btn1:active{
   /*ボタンを押したとき*/
@@ -64,11 +53,7 @@ p{font-size:px; color:#4e454a !important;}
   transform: translateY(4px);/*下に動く*/
   border-bottom: none;/*線を消す*/
 }
-#btn2{padding-right:1px;
-      padding-left: ; 
-      width:19.5%;
-      display: inline-block;
-      padding-left: ;
-      padding-right: }
-#btn3{padding-left: }
-
+#btn2{padding-right: 1px;
+      padding-left: 1px; }
+#btn3{padding-left: 230px;}
+h2{font-family:秀英丸ゴシック L}

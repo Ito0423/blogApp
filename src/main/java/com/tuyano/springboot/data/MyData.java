@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,6 +25,9 @@ public class MyData {
 	private long id;
 	
 	private String memo;
+	
+	@DateTimeFormat
+	private Date date;
 	
 //	private Date date =new Date();
 	

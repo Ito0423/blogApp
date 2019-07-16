@@ -1,10 +1,10 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>top page</title>
+	<title>design</title>
 	<meta http-equiv="Content-Type" 
 		content="text/html; charset=UTF-8" />
-	<LINK REL="stylesheet" TYPE="text/css" HREF="/view/css/blog.css"></LINK>
+	<LINK REL="stylesheet" TYPE="text/css" HREF="/view/css/design.css"></LINK>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 
@@ -25,16 +25,16 @@
 </div>
 </header>
 <div id="b" class="box">
-<br>
+<h2>文字</h2>
+<font face="HG創英角ﾎﾟｯﾌﾟ体" size="70px">文字</font>
+<!--<br>
 <br>
 <div class="row">
-<div class="col-md-4"></div>
-<div class="col-md-6" id=img2><img align="left" src="view/img/hatena.png" width="70px">
-<h2>Nazona Blog</h2></div>
-<!--  <div class="col-md-9"><a href="http://localhost:8080/home"><img id="img1" src="view/img/blog4.jpg" width="45%"></a></div>-->
-</div>
+<div class="col-md-1"></div>
+   class="col-md-9"><a href="http://localhost:8080/home"><img id="img1" src="view/img/blog4.jpg" width="45%"></a></div>
+<div class="col-md-2"></div>
 <br>
-<br>
+<br>-->
 </div>
 <div id="c" >
 <!--  <table class="table table-bordered ">
@@ -46,30 +46,25 @@
 <td></td></tr>
 </table>-->
 <br>
-<div id="btn3">
-<div id="btn2"> <a href="http://localhost:8080/home" class="btn-square" id="btn1">TOP</a></div>
-<div id="btn2"> <a href="http://localhost:8080/create" class="btn-square" id="btn1">編集</a></div>
-<div id="btn2"> <a href="http://localhost:8080/home" class="btn-square" id="btn1">記事一覧</a></div>
-<div id="btn2"> <a href="http://localhost:8080/home" class="btn-square" id="btn1">aaa</a></div>
-<div id="btn2"> <a href="http://localhost:8080/home" class="btn-square" id="btn1">bbb</a></div>
-
+<div class="row" id="btn3">
+<div id="btn2" class="col-md-1"> <a href="http://localhost:8080/home" class="btn-square" id="btn1">TOP</a></div>
+<div id="btn2" class="col-md-1"> <a href="http://localhost:8080/create" class="btn-square" id="btn1">編集</a></div>
+<div id="btn2" class="col-md-1"> <a href="http://localhost:8080/home" class="btn-square" id="btn1">記事一覧</a></div>
+<div id="btn2" class="col-md-1"> <a href="http://localhost:8080/home" class="btn-square" id="btn1">aaa</a></div>
+<div id="btn2" class="col-md-1"> <a href="http://localhost:8080/home" class="btn-square" id="btn1">bbb</a></div>
 </div>
 </div>
-<br>
-<br>
 <br>
 <div id="site2" >
 <div class="row">
-<div id="e" class="col-md-9">
-<div id="h" th:each="obj:${datalist}">
-<table>
-<tr><td><a th:href="@{'/view/'+${obj.id}}"><h1 align="left" style="font-size:30px" th:text="${obj.title}"></h1></a></td></tr>
-<tr><td><sup th:text="${obj.date}"></sup></td></tr>
-<tr><td>&nbsp;</td></tr>
+<div id="e" class="col-md-9 table-inline" th:each="obj:${datalist}">
+<!--  <pre th:each="obj:${datalist}" class="inline">-->
+<table class="inline">
+<tr><td><h1 align="left" style="font-size:30px" th:text="${obj.title}"></h1></td></tr>
 <tr><td><p th:text="${obj.memo}"><font color="#4e454a">text</font></p></td></tr>
 <!--<tr><td><h2 style="font-size:10px" align="right" th:text="${obj.date}" ></h2></td></tr>-->
 </table>
-</div>
+</pre>
 </div>
 <div id="f" class="col-md-3">
 <div id=f_4><h1>検索フォーム</h1>
@@ -80,9 +75,9 @@
 </div>
 <div id="f_5">
 <div id="f_1"><h1><font color="#4e454a" >新着記事</font></h1></div>
-<table id="f_2" class="table table-hover"  th:each="obj:${datalist}">
+<pre th:each="obj:${datalist}"><table id="f_2" class="table table-hover"  >
 <tr><td><font color="#4e454a"><a th:href="@{'/view/'+${obj.id}}"><p th:text="${obj.title}" color="#4e454a">????</p></a></font></td><tr>
-</table><hr></div>
+</table><hr></pre></div>
 <div id="f_3" class="widget thk_qr_code"><h1 class="side-title">QR コード</h1><img src="//chart.apis.google.com/chart?chs=250x250&amp;cht=qr&amp;chld=L|2&amp;chl=https%3A%2F%2Flogipara.com%2F" class="lazy" data-src="//chart.apis.google.com/chart?chs=250x250&amp;cht=qr&amp;chld=L|2&amp;chl=https%3A%2F%2Flogipara.com%2F" width="250" height="250" alt="QR Code | ろじっくぱらだいす(Logic Paradise)" data-loaded="true"><noscript><img src="//chart.apis.google.com/chart?chs=250x250&amp;cht=qr&amp;chld=L|2&amp;chl=https%3A%2F%2Flogipara.com%2F" width="250" height="250" alt="QR Code | ろじっくぱらだいす(Logic Paradise)" /></noscript></div>
 </div>
 </div>
@@ -100,6 +95,6 @@
 </div>
 </div>
 </div>
-
+</div>
 </body>
 </html>

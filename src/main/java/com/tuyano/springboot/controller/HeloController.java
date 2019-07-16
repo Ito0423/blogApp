@@ -110,4 +110,15 @@ public ModelAndView remove(@RequestParam long id,
 	public ModelAndView hello(ModelAndView mav) {
 		return mav;
 	}
+	@RequestMapping(value = {"/design"}, method = RequestMethod.GET)
+	public ModelAndView design(
+			@ModelAttribute("formModel") MyData mydata, 
+			ModelAndView mav) {
+		mav.setViewName("design");
+		mav.addObject("msg","this is sample content.");
+		Iterable<MyData> list = repository.findAll();
+		mav.addObject("datalist",list);		
+		return mav;
+	}
+	
 }
