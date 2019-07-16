@@ -20,11 +20,6 @@ public class SignupController {
 	@Autowired 
 	UserDataRepository repository;
 	
-	
-@GetMapping("/login")
-public String getLogin(Model model) {
-	return ("login");
-}
 @GetMapping("/signup")
 public String getSignUp(@ModelAttribute SignupForm form , Model model) {
 	return"signup";

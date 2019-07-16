@@ -11,8 +11,8 @@ public class ManageController {
 	
 	@GetMapping("/manage")
 	public String getHome(Model model) {
-		
-		return"Manage";
+		model.addAttribute("contents","manage::manage_contents");
+		return"manageLayout";
 	}
 	@PostMapping("/logout")
 	 public	String postLogout() {
