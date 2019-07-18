@@ -1,5 +1,7 @@
 package com.tuyano.springboot.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -8,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -61,4 +64,20 @@ public class ManageController {
 				mav.addObject("datalist",list);
 				return mav;
 			}
+	@RequestMapping(value="/blogdetail/{id}",method=RequestMethod.GET)
+	public ModelAndView getblogdetail(@ModelAttribute MyData mydata,Model model,
+			@PathVariable int id,ModelAndView mav) {
+		mav.setViewName("manageLayout");
+		mav.addObject("contents","blogDetail::blogDetail_contents");
+		Optional<MyData> data=repository.findById((long)id);
+		mav.addObject("formModel",data.get());
+		return mav;
+	}
+	@RequestMapping(value="/blogdetail",method=RequestMethod.POST)
+	@Transactional(readOnly=false)
+	public ModelAndView updatablog(@ModelAttribute MyData mydata
+			,ModelAndView mav) {
+		repository.saveAndFlush(mydata);
+		return new ModelAndView("redirect:/");
+	}
 }

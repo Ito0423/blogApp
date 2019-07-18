@@ -9,4 +9,5 @@ import com.tuyano.springboot.data.MyData;
 @Repository
 public interface MyDataRepository  extends JpaRepository<MyData, Long> {
 	public Optional<MyData> findById(Long name);
+	
 }

@@ -1,10 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8"></meta>
 </head>
 <body>
-
+    <div th:fragment="blogDetail_contents">
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="page-header">
+                    <h1>ブログ詳細</h1>
+                </div>
+                <form method="post" action="/blogdetail" th:object="${formModel}">
+                <input type="hidden" name="id" th:value="*{id}"/>
+                    <table class="table table-bordered table-hover">
+                        <tr>
+                            <th class="info col-sm-1">タイトル</th>
+                            <td class="col-sm-3">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" th:field="*{title}"  />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="info col-sm-1" >本文</th>
+                            <td class="col-sm-3">
+                                <div class="form-group">
+                                    <textarea  rows="15" cols="60" class="form-control" th:field="*{memo}"  >
+                                    </textarea>
+                                </div>
+                            </td>
+                        </tr>
+                            <tr>
+                            <th class="info col-sm-1">日時</th>
+                            <td class="col-sm-3">
+                                <div class="form-group">
+                                    <input class="form-control"  th:field="*{date}" readonly="readonly" />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                        <td><button class="btn btn-primary btn-lg pull-right" type="submit"
+                        name="updata"></button></td>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
