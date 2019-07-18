@@ -1,6 +1,5 @@
 package com.tuyano.springboot.data;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,9 +26,7 @@ public class MyData {
 	private String memo;
 	
 	@DateTimeFormat
-	private Date date;
-	
-//	private Date date =new Date();
+    private Date date =new Date();
 	
 	private String title;
 	

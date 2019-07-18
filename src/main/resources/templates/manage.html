@@ -8,10 +8,22 @@
     <!-- ポイント：th:fragment -->
     <div th:fragment="manage_contents">
         <div class="page-header">
-            <h1>管理者ページ</h1>
-            
-            
-        </div>
+            <h2>管理者ページ</h2>
+            	</div>
+         <div class="col-sm-5">   
+         <h1>CREATE</h1>
+    <table class="table table-bordered table-hover">
+	<form method="post" action="/manage"　th:object="${formModel}">
+	<tr><td><label for="title">タイトル</label></td>
+	<td><input type="text" name="title" th:value="*{title}"></td></tr>
+	<tr><td><label for="memo">入力</label></td>
+	<td><textarea name="memo" rows="15" cols="50" th:text="*{memo}"></textarea></td></tr>
+	<tr><td></td><td><input type="submit"></input></td></tr>
+	</form>
+	</table>
+	</div>  
+	
+
     </div>
 </body>
 </html>

@@ -45,7 +45,7 @@ pre {
 #img2{padding-left:30px;}
 h1{color:#4e454a !important;font-size:20px !important;border-left:solid 10px #add8e6;
  padding-left: 12px; border-bottom: 1px solid #add8e6;}
-h2{font-size:50px !important; padding-left:}
+h2{font-size:50px !important; padding-left:10px;}
 p{font-size:px; color:#4e454a !important;}
 #btn1{
   display:inline-block;
@@ -56,7 +56,6 @@ p{font-size:px; color:#4e454a !important;}
   border-bottom: solid 4px #627295;
   border-radius: 3px;
   width:100%;
-
 }
 #btn1:active{
   /*ボタンを押したとき*/
