@@ -8,19 +8,15 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.tuyano.springboot.data.MyData;
 import com.tuyano.springboot.form.CreateForm;
-import com.tuyano.springboot.form.SignupForm;
 import com.tuyano.springboot.repositories.MyDataRepository;
-import com.tuyano.springboot.repositories.UserDataRepository;
 
 @Controller
 public class ManageController {
@@ -73,11 +69,13 @@ public class ManageController {
 		mav.addObject("formModel",data.get());
 		return mav;
 	}
-	@RequestMapping(value="/blogdetail",method=RequestMethod.POST)
+	@RequestMapping(value="/blogdetail", params = "submit",method=RequestMethod.POST)
 	@Transactional(readOnly=false)
 	public ModelAndView updatablog(@ModelAttribute MyData mydata
 			,ModelAndView mav) {
 		repository.saveAndFlush(mydata);
-		return new ModelAndView("redirect:/");
+		return new ModelAndView("redirect:/blogList");
 	}
+	@RequestMapping(value="/blogdetail", params = "deleta",method=RequestMethod.POST)
+	@Transactional(readOnly=false)
 }
