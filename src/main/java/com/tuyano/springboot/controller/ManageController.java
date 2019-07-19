@@ -90,7 +90,7 @@ public class ManageController {
 	@Autowired
 	UserDataRepository repository_user;
 	@RequestMapping(value="/userList", method=RequestMethod.GET)
-	public ModelAndView getuserList(@ModelAttribute("formModel") MyData mydata,Model model,
+	public ModelAndView getuserList(@ModelAttribute("formModel") UserData userdata,Model model,
 			ModelAndView mav) {
 				mav.setViewName("manageLayout");
 				Iterable<UserData> userlist=repository_user.findAll();
@@ -98,4 +98,26 @@ public class ManageController {
 				mav.addObject("datalist",userlist);
 				return mav;
 			}
+	@RequestMapping(value="/userdetail/{id}",method=RequestMethod.GET)
+	public ModelAndView getuserdetail(@ModelAttribute UserData userdata,Model model,
+			@PathVariable int id,ModelAndView mav) {
+		mav.setViewName("manageLayout");
+		mav.addObject("contents","userDetail::userDetail_contents");
+		Optional<UserData> data=repository_user.findById((long)id);
+		mav.addObject("formModel",data.get());
+		return mav;
+	}
+	@RequestMapping(value="/userdetail", params = "delete",method=RequestMethod.POST)
+	@Transactional(readOnly=false)
+	public ModelAndView user_remove(@RequestParam long id,ModelAndView mav) {
+		repository_user.deleteById(id);
+		return new ModelAndView("redirect:/userList");
+	}
+	@RequestMapping(value="/userdetail", params = "updata",method=RequestMethod.POST)
+	@Transactional(readOnly=false)
+	public ModelAndView user_updata(@ModelAttribute UserData userdata
+			,ModelAndView mav) {
+		repository_user.saveAndFlush(userdata);
+		return new ModelAndView("redirect:/userList");
+	}
 }
