@@ -5,23 +5,23 @@
     <meta charset="UTF-8"></meta>
 </head>
 <body>
-<div th:fragment="blogList_contents">
+<div th:fragment="userList_contents">
 <div class="page-header">
-<h2>ブログ一覧</h2>
+<h2>管理者一覧</h2>
 </div>
 <div class="row" >
 <div class="col-md-9" >
 <table  class="table table-bordered table-hover table-striped" id="blogdetail">
 <tr>
-<th class="info col-sm-2">タイトル</th>
-<th class="info col-sm-5">本文</th>
-<th class="info col-sm-2">日時</th>
+<th class="info col-sm-3">ユーザーID</th>
+<th class="info col-sm-3">パスワード</th>
+<th class="info col-sm-3">ユーザーネーム</th>
 <th class="info col-sm-1"></th>
 </tr>
 <tr th:each="obj:${datalist}">
-<td th:text="${obj.title}"></td>
-<td><textarea th:text="${obj.memo}" readonly="readonly" rows="5" cols="60"></textarea></td>
-<td th:text="${obj.date}"></td>
+<td th:text="${obj.userid}"></td>
+<td th:text="${obj.password}"></td>
+<td th:text="${obj.username}"></td>
 <td>
 <a class="btn btn-primary" th:href="@{'/blogdetail/'+${obj.id}}">詳細</a>
 </td>

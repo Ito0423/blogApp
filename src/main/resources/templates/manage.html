@@ -10,17 +10,18 @@
         <div class="page-header">
             <h2>管理者ページ</h2>
             	</div>
-         <div class="col-sm-5">   
-         <h1>CREATE</h1>
+         <div class="col-sm-6">   
+         <div class="row">
     <table class="table table-bordered table-hover">
 	<form method="post" action="/manage"　th:object="${formModel}">
-	<tr><td class="info"><label for="title" >タイトル</label></td>
-	<td><input type="text" name="title" th:value="*{title}"></td></tr>
-	<tr><td class="info"><label for="memo">入力</label></td>
-	<td><textarea name="memo" rows="15" cols="50" th:text="*{memo}"></textarea></td></tr>
-	<tr><td class="info"></td><td ><input type="submit"></input></td></tr>
+	<tr><td class="info col-sm-2"><label for="title" >タイトル</label></td>
+	<td class="col-sm-2"><textarea  name="title" cols="60" th:value="*{title}"></textarea></td></tr>
+	<tr><td class="info col-sm-2"><label for="memo">入力</label></td>
+	<td class="col-sm-2"><textarea name="memo" rows="15" cols="60" th:text="*{memo}"></textarea></td></tr>
+	<tr><td class="info col-sm-2"></td><td ><input type="submit" class="btn btn-primary btn-lg pull-right"></input></td></tr>
 	</form>
 	</table>
+	</div>
 	</div>  
 	
 

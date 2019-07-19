@@ -13,10 +13,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.tuyano.springboot.data.MyData;
+import com.tuyano.springboot.data.UserData;
 import com.tuyano.springboot.form.CreateForm;
 import com.tuyano.springboot.repositories.MyDataRepository;
+import com.tuyano.springboot.repositories.UserDataRepository;
 
 @Controller
 public class ManageController {
@@ -45,7 +48,7 @@ public class ManageController {
 		}
 		System.out.println(form);
 		repository.saveAndFlush(mydata);
-		return new ModelAndView("redirect:/");
+		return new ModelAndView("redirect:/blogList");
 	}
 	@PostMapping("/logout")
 	 public	String postLogout() {
@@ -69,13 +72,30 @@ public class ManageController {
 		mav.addObject("formModel",data.get());
 		return mav;
 	}
-	@RequestMapping(value="/blogdetail", params = "submit",method=RequestMethod.POST)
+	
+	@RequestMapping(value="/blogdetail", params = "delete",method=RequestMethod.POST)
+	@Transactional(readOnly=false)
+	public ModelAndView remove(@RequestParam long id,ModelAndView mav) {
+		repository.deleteById(id);
+		return new ModelAndView("redirect:/blogList");
+	}
+	@RequestMapping(value="/blogdetail", params = "updata",method=RequestMethod.POST)
 	@Transactional(readOnly=false)
 	public ModelAndView updatablog(@ModelAttribute MyData mydata
 			,ModelAndView mav) {
 		repository.saveAndFlush(mydata);
 		return new ModelAndView("redirect:/blogList");
 	}
-	@RequestMapping(value="/blogdetail", params = "deleta",method=RequestMethod.POST)
-	@Transactional(readOnly=false)
+	
+	@Autowired
+	UserDataRepository repository_user;
+	@RequestMapping(value="/userList", method=RequestMethod.GET)
+	public ModelAndView getuserList(@ModelAttribute("formModel") MyData mydata,Model model,
+			ModelAndView mav) {
+				mav.setViewName("manageLayout");
+				Iterable<UserData> userlist=repository_user.findAll();
+				mav.addObject("contents","userList::userList_contents");
+				mav.addObject("datalist",userlist);
+				return mav;
+			}
 }
