@@ -22,7 +22,7 @@ public class HeloController {
 	@Autowired
 	MyDataRepository repository;
 
-	@RequestMapping(value = "/create", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/create", method = RequestMethod.GET)
 	public ModelAndView index(
 			@ModelAttribute("formModel") MyData mydata, 
 			ModelAndView mav) {
@@ -40,7 +40,7 @@ public class HeloController {
 			ModelAndView mav) {
 		repository.saveAndFlush(mydata);
 		return new ModelAndView("redirect:/");
-	}
+	}*/
 	
 
 	@RequestMapping(value = {"/home", "/"}, method = RequestMethod.GET)
@@ -67,7 +67,7 @@ public class HeloController {
 	}
 
 	
-	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
 	public ModelAndView edit(@ModelAttribute MyData mydata, 
 			@PathVariable int id,ModelAndView mav) {
 		mav.setViewName("edit");
@@ -120,5 +120,5 @@ public ModelAndView remove(@RequestParam long id,
 		mav.addObject("datalist",list);		
 		return mav;
 	}
-	
+	*/
 }

@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.tuyano.springboot.data.MyData;
 import com.tuyano.springboot.data.UserData;
 import com.tuyano.springboot.form.CreateForm;
+import com.tuyano.springboot.form.SignupForm;
 import com.tuyano.springboot.repositories.MyDataRepository;
 import com.tuyano.springboot.repositories.UserDataRepository;
 
@@ -115,8 +116,16 @@ public class ManageController {
 	}
 	@RequestMapping(value="/userdetail", params = "updata",method=RequestMethod.POST)
 	@Transactional(readOnly=false)
-	public ModelAndView user_updata(@ModelAttribute UserData userdata
-			,ModelAndView mav) {
+	public ModelAndView user_updata(
+			@ModelAttribute("formModel") @Validated SignupForm form,
+			BindingResult bindingResult,UserData userdata,@RequestParam long id			,ModelAndView mav) {
+		mav.addObject("contents","userDetail::userDetail_contents");
+		if(bindingResult.hasErrors()) {
+			mav.setViewName("manageLayout");
+			Optional<UserData> data=repository_user.findById((long)id);
+			mav.addObject("formModel",data.get());
+			return mav;
+		}
 		repository_user.saveAndFlush(userdata);
 		return new ModelAndView("redirect:/userList");
 	}
