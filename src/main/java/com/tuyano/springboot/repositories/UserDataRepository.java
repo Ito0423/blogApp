@@ -9,4 +9,5 @@ import com.tuyano.springboot.data.UserData;
 @Repository
 public interface UserDataRepository extends JpaRepository<UserData,Long>{
 		public Optional<UserData> findById(Long name);
+		public UserData findByUsername(String username);
 }
