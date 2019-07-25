@@ -1,4 +1,4 @@
-package com.tuyano.springboot.config;
+/*package com.tuyano.springboot.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -32,8 +32,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll();
        http.csrf().disable();
     }
- 
- 
+
+ //TODO:現在インメモリ、将来的にMySQLのIDとPASSを取得して設定
     @Autowired
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
@@ -42,4 +42,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .password("{noop}password")
                 .roles("USER");
     }
-}
+}*/
