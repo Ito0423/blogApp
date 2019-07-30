@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.tuyano.springboot.data.UserData;
 import com.tuyano.springboot.form.SignupForm;
+import com.tuyano.springboot.repositories.AccountRepository;
 import com.tuyano.springboot.repositories.UserDataRepository;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -18,7 +19,7 @@ import org.springframework.validation.annotation.Validated;
 public class SignupController {
 	
 	@Autowired 
-	UserDataRepository repository;
+	AccountRepository repository;
 	
 @GetMapping("/signup")
 public String getSignUp(@ModelAttribute SignupForm form , Model model) {

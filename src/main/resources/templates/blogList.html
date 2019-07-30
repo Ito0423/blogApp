@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-    <meta charset="UTF-8"></meta>
+<meta charset="UTF-8"></meta>
 </head>
 <body>
-<div th:fragment="blogList_contents">
-<div class="page-header">
-<h2>ブログ一覧</h2>
-</div>
-<div class="row" >
-<div class="col-md-9" >
-<table  class="table table-bordered table-hover table-striped" id="blogdetail">
-<tr>
-<th class="info col-sm-2">タイトル</th>
-<th class="info col-sm-5">本文</th>
-<th class="info col-sm-2">日時</th>
-<th class="info col-sm-1"></th>
-</tr>
-<tr th:each="obj:${datalist}">
-<td th:text="${obj.title}"></td>
-<td><textarea th:text="${obj.memo}" readonly="readonly" rows="5" cols="60"></textarea></td>
-<td th:text="${obj.date}"></td>
-<td>
-<a class="btn btn-primary" th:href="@{'/blogdetail/'+${obj.id}}">詳細</a>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
+	<div th:fragment="blogList_contents">
+		<div class="page-header">
+			<h2>ブログ一覧</h2>
+		</div>
+		<div class="row">
+			<div class="col-md-9">
+				<table class="table table-bordered table-hover table-striped"
+					id="blogdetail">
+					<tr>
+						<th class="info col-sm-2">タイトル</th>
+						<th class="info col-sm-5">本文</th>
+						<th class="info col-sm-2">日時</th>
+						<th class="info col-sm-1"></th>
+					</tr>
+					<tr th:each="obj:${datalist}">
+						<td th:text="${obj.title}"></td>
+						<td><textarea th:text="${obj.memo}" readonly="readonly"
+								rows="5" cols="60"></textarea></td>
+						<td th:text="${obj.date}"></td>
+						<td><a class="btn btn-primary"
+							th:href="@{'/blogdetail/'+${obj.id}}">詳細</a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

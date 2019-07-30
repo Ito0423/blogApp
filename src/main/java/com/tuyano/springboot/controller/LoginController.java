@@ -23,8 +23,8 @@ public class LoginController {
      */
     @PostMapping("/login")
     public String postLogin(Model model) {
-
+    System.out.println("aaaaa");
         //ホーム画面に遷移
-        return "redirect:/manage";
+        return "redirect:/home";
     }
 }

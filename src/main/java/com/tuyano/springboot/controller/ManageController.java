@@ -19,6 +19,7 @@ import com.tuyano.springboot.data.MyData;
 import com.tuyano.springboot.data.UserData;
 import com.tuyano.springboot.form.CreateForm;
 import com.tuyano.springboot.form.SignupForm;
+import com.tuyano.springboot.repositories.AccountRepository;
 import com.tuyano.springboot.repositories.MyDataRepository;
 import com.tuyano.springboot.repositories.UserDataRepository;
 
@@ -27,6 +28,8 @@ public class ManageController {
 
 	@Autowired 
 	MyDataRepository repository;
+	@Autowired
+	AccountRepository accountrepository;
 	
 	@RequestMapping(value="/manage", method=RequestMethod.GET)
 	public ModelAndView getHome(@ModelAttribute("formModel") MyData mydata,Model model,
@@ -94,7 +97,7 @@ public class ManageController {
 	public ModelAndView getuserList(@ModelAttribute("formModel") UserData userdata,Model model,
 			ModelAndView mav) {
 				mav.setViewName("manageLayout");
-				Iterable<UserData> userlist=repository_user.findAll();
+				Iterable<UserData> userlist=accountrepository.findAll();
 				mav.addObject("contents","userList::userList_contents");
 				mav.addObject("datalist",userlist);
 				return mav;
@@ -104,7 +107,7 @@ public class ManageController {
 			@PathVariable int id,ModelAndView mav) {
 		mav.setViewName("manageLayout");
 		mav.addObject("contents","userDetail::userDetail_contents");
-		Optional<UserData> data=repository_user.findById((long)id);
+		Optional<UserData> data=accountrepository.findById((long)id);
 		mav.addObject("formModel",data.get());
 		return mav;
 	}
