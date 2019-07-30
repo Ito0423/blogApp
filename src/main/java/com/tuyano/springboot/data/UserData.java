@@ -2,6 +2,7 @@ package com.tuyano.springboot.data;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -33,8 +34,7 @@ import lombok.Data;
 	    @Column(nullable = false)
 	    private String password;
 	    @Column(nullable = false)
-	    @Enumerated(EnumType.STRING)
-	    private Authority authority;
+	    private String authority = "ROLE_ADMIN";
 	    @Override
 	    public Collection<? extends GrantedAuthority> getAuthorities() {
 	        List<GrantedAuthority> authorities = new ArrayList<>();
