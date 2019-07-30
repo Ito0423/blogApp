@@ -102,13 +102,13 @@ public class ManageController {
 				mav.addObject("datalist",userlist);
 				return mav;
 			}
-	@RequestMapping(value="/userdetail/{id}",method=RequestMethod.GET)
+	@RequestMapping(value="/userdetail/{username}",method=RequestMethod.GET)
 	public ModelAndView getuserdetail(@ModelAttribute UserData userdata,Model model,
-			@PathVariable int id,ModelAndView mav) {
+			@PathVariable String  username,ModelAndView mav) {
 		mav.setViewName("manageLayout");
 		mav.addObject("contents","userDetail::userDetail_contents");
-		Optional<UserData> data=accountrepository.findById((long)id);
-		mav.addObject("formModel",data.get());
+		UserData data=accountrepository.findByUsername(username);
+		mav.addObject("formModel",data);
 		return mav;
 	}
 	@RequestMapping(value="/userdetail", params = "delete",method=RequestMethod.POST)

@@ -2,7 +2,6 @@ package com.tuyano.springboot.data;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -22,19 +21,25 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "account")
-   
 	public class UserData implements UserDetails {
 	    private static final long serialVersionUID = 1L;
-	    public enum Authority {ROLE_USER, ROLE_ADMIN};
+	    /**
+	     * @author ito
+	     * @コメントアクセス権限のemumです。
+	     */
+	    public enum Authority { 
+	    	ROLE_USER,
+	        ROLE_ADMIN
+	    	};
 	    @Id
-	    @GeneratedValue(strategy = GenerationType.AUTO)
 	    private long id;
 	    @Column(nullable = false, unique = true)
 	    private String username;
 	    @Column(nullable = false)
 	    private String password;
 	    @Column(nullable = false)
-	    private String authority = "ROLE_ADMIN";
+	    @Enumerated(EnumType.STRING)
+	    private Authority authority = Authority.ROLE_ADMIN;
 	    @Override
 	    public Collection<? extends GrantedAuthority> getAuthorities() {
 	        List<GrantedAuthority> authorities = new ArrayList<>();
@@ -57,6 +62,5 @@ import lombok.Data;
 	    public boolean isEnabled() {
 	        return true;
 	    }
-	    // setter , getter は省略]
-	    
+	    // setter , getter は省略
 	}
