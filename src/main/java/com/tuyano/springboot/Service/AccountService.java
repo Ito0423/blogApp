@@ -12,16 +12,14 @@ public class AccountService implements UserDetailsService {
   @Autowired
   private AccountRepository accRepo;
   @Override
-  public UserDetails loadUserByUsername(String username)
-          throws UsernameNotFoundException {
-      if ( username == null || username.isEmpty() ){
-          throw new UsernameNotFoundException("username is empty");
-      }
-
-      UserData foundUser = accRepo.findById(username);
-      if( foundUser != null ){
-          return foundUser.toMyUserDetail();
-      }
-      throw new UsernameNotFoundException( username + "is not found");
+  public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    if (username == null || username.isEmpty()) {
+      throw new UsernameNotFoundException("");
+    }
+    UserData userInfo = accRepo.findByUsername(username);
+    if (userInfo == null) {
+      throw new UsernameNotFoundException("");
+    }
+    return userInfo;
   }
 }

@@ -57,5 +57,6 @@ import lombok.Data;
 	    public boolean isEnabled() {
 	        return true;
 	    }
-	    // setter , getter は省略
+	    // setter , getter は省略]
+	    
 	}
