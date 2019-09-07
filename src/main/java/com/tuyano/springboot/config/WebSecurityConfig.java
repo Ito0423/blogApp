@@ -1,4 +1,4 @@
-/*package com.tuyano.springboot.config;
+package com.tuyano.springboot.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -42,4 +42,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .password("{noop}password")
                 .roles("USER");
     }
-}*/
+}
