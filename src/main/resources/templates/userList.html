@@ -7,7 +7,7 @@
 <body>
 	<div th:fragment="userList_contents">
 		<div class="page-header">
-			<h2>管理者一覧</h2>
+			<h2>ユーザー一覧</h2>
 		</div>
 		<div class="row">
 			<div class="col-md-9">
@@ -22,7 +22,7 @@
 						<td th:text="${obj.password}"></td>
 						<td th:text="${obj.username}"></td>
 						<td><a class="btn btn-primary"
-							th:href="@{'/userdetail/'+${obj.id}}">詳細</a>
+							th:href="@{'/userdetail/'+${obj.username}}">詳細</a>
 					</tr>
 				</table>
 			</div>

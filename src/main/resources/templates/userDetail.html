@@ -7,12 +7,12 @@
 <body>
 	<div th:fragment="userDetail_contents">
 		<div class="page-header">
-			<h2>管理者詳細</h2>
+			<h2>ユーザー詳細</h2>
 		</div>
 		<div class="row">
 			<div class="col-sm-6">
 				<form method="post" action="/userdetail" th:object="${formModel}">
-					<input type="hidden" name="username" th:value="*{username}" />
+					<input type="hidden" name="id" th:value="*{id}" />
 					<table class="table table-bordered table-hover">
 						<tr>
 							<th class="info col-sm-1">ユーザーID</th>

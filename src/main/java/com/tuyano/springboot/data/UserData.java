@@ -31,9 +31,11 @@ import lombok.Data;
 	    	ROLE_USER,
 	        ROLE_ADMIN
 	    	};
-	    @Id
+	   //TODO：後でコメントアウト
+	    	@Id
 	    private long id;
 	    @Column(nullable = false, unique = true)
+	    
 	    private String username;
 	    @Column(nullable = false)
 	    private String password;

@@ -1,5 +1,6 @@
 package com.tuyano.springboot.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -97,7 +98,7 @@ public class ManageController {
 	public ModelAndView getuserList(@ModelAttribute("formModel") UserData userdata,Model model,
 			ModelAndView mav) {
 				mav.setViewName("manageLayout");
-				Iterable<UserData> userlist=accountrepository.findAll();
+				List<UserData> userlist=accountrepository.findAll();
 				mav.addObject("contents","userList::userList_contents");
 				mav.addObject("datalist",userlist);
 				return mav;
@@ -111,12 +112,16 @@ public class ManageController {
 		mav.addObject("formModel",data);
 		return mav;
 	}
+	
+	//TODO:動かない
 	@RequestMapping(value="/userdetail", params = "delete",method=RequestMethod.POST)
 	@Transactional(readOnly=false)
 	public ModelAndView user_remove(@RequestParam long id,ModelAndView mav) {
-		repository_user.deleteById(id);
+		accountrepository.deleteById(id);
 		return new ModelAndView("redirect:/userList");
 	}
+	
+	//TODO:動かない
 	@RequestMapping(value="/userdetail", params = "updata",method=RequestMethod.POST)
 	@Transactional(readOnly=false)
 	public ModelAndView user_updata(
